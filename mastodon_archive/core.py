@@ -240,7 +240,7 @@ def save(file_name, data):
     if os.path.isfile(file_name):
         os.replace(file_name, file_name + '~')
     with open(file_name, mode = 'w', encoding = 'utf-8') as fp:
-        data = json.dump(data, fp, indent = 2, default = date_handler)
+        data = json.dump(data, fp, indent = 2, default = date_handler, ensure_ascii = False)
 
 def all_accounts():
     """
